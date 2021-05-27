@@ -11,4 +11,4 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: print "hello from triggertest"
+      - run: echo "hello from triggertest"
