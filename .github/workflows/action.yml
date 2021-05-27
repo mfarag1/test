@@ -1,14 +1,11 @@
 name: Manually triggered workflow
 on:
-  push:
-    branches:
-    - triggertest
   pull_request:
     branches:
     - triggertest
-  
+
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello from triggertest"
+      - run: echo "goodbye from triggertest2"
