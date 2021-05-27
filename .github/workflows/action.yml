@@ -1,14 +1,16 @@
 name: Manually triggered workflow
 on:
   push:
-    branches:
-    - triggertest
+    branches-ignore:
+    - triggertest2
   pull_request:
     branches:
-    - triggertest
-  
+    - triggertest2
+    types: [closed]
+
 jobs:
   say_hello:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - run: echo "hello from triggertest"
