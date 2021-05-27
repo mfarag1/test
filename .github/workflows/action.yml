@@ -3,9 +3,13 @@ on:
   pull_request:
     branches:
     - triggertest
+    types: [closed]
 
 jobs:
   say_hello:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    
     steps:
-      - run: echo "goodbye from triggertest2"
+      - name: goodbye
+        run: echo "goodbye from triggertest2"
