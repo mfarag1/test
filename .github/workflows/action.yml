@@ -11,6 +11,6 @@ on:
 jobs:
   say_hello:
     runs-on: ubuntu-latest
-    if: github.event == 'push' || github.event.pull_request.merged == true
+    if: github.event_name == 'push' || github.event.pull_request.merged == true
     steps:
       - run: echo "hello from triggertest"
